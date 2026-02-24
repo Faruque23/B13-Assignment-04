@@ -17,15 +17,44 @@
 
     <!--  -->
 
+    <style>
+        * {
+            font-family: 'Geist', sans-serif;
+        }
+    </style>
+
 </head>
 
 <body>
     <header>
 
         <div class="navbar bg-base-100 shadow-sm px-20">
-            <a class="btn btn-ghost text-xl">daisyUI</a>
+            <a class="btn btn-ghost text-xl">Job Application Tracker</a>
         </div>
     </header>
+    <main>
+        <!-- Dashboard -->
+        <section class="mt-10 px-20">
+            <div>
+                <h2 class="text-xl font-bold">Dashboard</h2>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-4  mt-4">
+                <div class="card bg-base-100 shadow p-4">
+                    <div class="text-sm font-bold text-base-content/70">Total</div>
+                    <div id="total-count" class="text-xl font-bold mt-2">0</div>
+                </div>
+                <div class="card bg-base-100 shadow p-4">
+                    <div class="text-sm text-base-content/70 font-bold ">Interview</div>
+                    <div id="interview-count" class="text-xl font-bold mt-2 text-green-700">0</div>
+                </div>
+                <div class="card bg-base-100 shadow p-4">
+                    <div class="text-sm text-base-content/70 font-bold">Rejected</div>
+                    <div id="rejected-count" class="text-xl font-bold mt-2 text-red-700">0</div>
+                </div>
+            </div>
+        </section>
+
+    </main>
 
 </body>
 
