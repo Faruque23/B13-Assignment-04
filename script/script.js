@@ -40,7 +40,48 @@ function updateCounts(){
 
 function setActiveTab(name){
   state.activeTab = name;
-  tabs.forEach(t=> t.classList.toggle('tab-active', t.dataset.tab===name));
+  tabs.forEach(t=>{
+    const isActive = t.dataset.tab===name;
+    t.classList.toggle('tab-active', isActive);
+    // use underline (text-decoration) for active tab instead of border/background
+    t.style.backgroundColor = '';
+    t.style.color = '';
+    t.style.textDecoration = '';
+    t.style.textDecorationColor = '';
+    t.style.textDecorationThickness = '';
+
+    if(t.dataset.tab==='Interview'){
+      if(isActive){
+        t.style.textDecoration = 'underline';
+        t.style.textDecorationColor = '#15803d'; // green-700
+        t.style.textDecorationThickness = '3px';
+        t.style.color = '#15803d';
+      } else {
+        t.style.textDecoration = 'none';
+        t.style.color = '#15803d';
+      }
+    } else if(t.dataset.tab==='Rejected'){
+      if(isActive){
+        t.style.textDecoration = 'underline';
+        t.style.textDecorationColor = '#b91c1c'; // red-700
+        t.style.textDecorationThickness = '3px';
+        t.style.color = '#b91c1c';
+      } else {
+        t.style.textDecoration = 'none';
+        t.style.color = '#b91c1c';
+      }
+    } else {
+      // All tab: subtle underline when active
+      if(isActive){
+        t.style.textDecoration = 'underline';
+        t.style.textDecorationColor = '';
+        t.style.textDecorationThickness = '2px';
+      } else {
+        t.style.textDecoration = 'none';
+      }
+    }
+  });
+
   renderJobs();
   updateCounts();
 }
