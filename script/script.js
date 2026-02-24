@@ -59,9 +59,9 @@ function renderJobs(){
 
   list.forEach(job=>{
     const card = document.createElement('article');
-    card.className = 'card';
+    card.className = 'card relative bg-base-100 shadow p-4';
     card.innerHTML = `
-      <button class="delete-btn" aria-label="Delete"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
+      <button class="delete-btn absolute top-2 right-2" aria-label="Delete"> <i class="fa fa-trash" aria-hidden="true"></i> </button>
       <h3 class="font-bold">${job.position} — ${job.company}</h3>
       <div class="meta">${job.location} • ${job.type} • ${job.salary} <span class="status-badge"></span></div>
       <div class="description">${job.description}</div>
