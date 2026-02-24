@@ -126,6 +126,7 @@ function renderJobs(){
 }
 
 // initialize
+setActiveTab('All');
 updateCounts();
 renderJobs();
 
